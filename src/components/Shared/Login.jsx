@@ -13,7 +13,8 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const { loading } = useSelector((store) => store.auth);
+
+  const { loading } = useSelector((store) => store.auth); // Get user data from store
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -30,17 +31,43 @@ const Login = () => {
         withCredentials: true,
       });
       if (res.data.success) {
-        dispatch(setUser(res.data.user));
-        navigate("/");
+        dispatch(setUser(res.data.user)); // Update user and set isAuthenticated to true
+        
+        // Navigate based on user role
+        const userRole = res.data.user.role;
+        switch (userRole) {
+          case "admin":
+            navigate("/admin");
+            break;
+          case "agronomists":
+            navigate("/agronomists");
+            break;
+          case "farmer":
+            navigate("/farmer");
+            break;
+          case "government":
+            navigate("/government");
+            break;
+          case "nutritionist":
+            navigate("/nutritionist");
+            break;
+          case "user":
+            navigate("/user");
+            break;
+          default:
+            toast.error("Invalid role");
+        }
+  
         toast.success(res.data.message);
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
       toast.error(error.response?.data?.message || "An error occurred");
     } finally {
       dispatch(setLoading(false));
     }
   };
+  
 
   return (
     <div>
