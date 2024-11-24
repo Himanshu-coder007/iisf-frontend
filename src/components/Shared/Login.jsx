@@ -39,7 +39,7 @@ const Login = () => {
           case "admin":
             navigate("/admin");
             break;
-          case "agronomists":
+          case "agronomist":
             navigate("/agronomist");
             break;
           case "farmer":
