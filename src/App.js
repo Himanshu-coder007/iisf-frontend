@@ -29,11 +29,11 @@ const App = () => {
           }
         />
         <Route
-          path="/agronomists"
+          path="/agronomist"
           element={
             <PrivateRoute
               element={<Agronomists />}
-              allowedRoles={["agronomists"]}
+              allowedRoles={["agronomist"]}
             />
           }
         />
