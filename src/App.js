@@ -5,6 +5,9 @@ import Dashboard from "./components/Shared/Dashboard";
 import Login from "./components/Shared/Login";
 import Signup from "./components/Shared/Signup";
 import Admin from "./components/Admin/Dashboard";
+import AdminHome from "./components/Admin/Home"; // Component for /admin/home
+import AdminUsers from "./components/Admin/Users"; // Component for /admin/users
+import AdminRecipes from "./components/Admin/Recipes"; // Component for /admin/recipes
 import Agronomists from "./components/Agronomists/Dashboard";
 import Farmer from "./components/Farmer/Dashboard";
 import Government from "./components/Government/Dashboard";
@@ -23,11 +26,16 @@ const App = () => {
 
         {/* Protecting routes */}
         <Route
-          path="/admin"
+          path="/admin/*"
           element={
             <PrivateRoute element={<Admin />} allowedRoles={["admin"]} />
           }
-        />
+        >
+          {/* Nested Admin Routes */}
+          <Route path="home" element={<AdminHome />} />
+          <Route path="users" element={<AdminUsers />} />
+          <Route path="recipes" element={<AdminRecipes />} />
+        </Route>
         <Route
           path="/agronomist"
           element={
