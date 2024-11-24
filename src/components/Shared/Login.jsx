@@ -40,7 +40,7 @@ const Login = () => {
             navigate("/admin");
             break;
           case "agronomists":
-            navigate("/agronomists");
+            navigate("/agronomist");
             break;
           case "farmer":
             navigate("/farmer");
