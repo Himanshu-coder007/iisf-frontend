@@ -29,7 +29,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       dispatch(setLoading(true));
-      const res = await axios.post(`${USER_API_END_POINT}/register`, input, {
+      const res = await axios.post(`${USER_API_END_POINT}/api/v1/user/register`, input, {
         headers: { "Content-Type": "application/json" },
         withCredentials: true,
       });

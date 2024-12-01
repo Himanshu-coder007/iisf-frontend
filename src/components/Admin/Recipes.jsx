@@ -21,6 +21,22 @@ const Recipes = () => {
       image: 'https://www.yummytummyaarthi.com/wp-content/uploads/2014/10/1-50.jpg',
       description: 'Fluffy millet pancakes served with maple syrup and fresh berries.',
     },
+    {
+      title: 'Millet Pancakes',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4yNAg8mINQeky1Wln4RUS2XAeIJtf1TaKMw&s',
+      description: 'Fluffy millet pancakes served with maple syrup and fresh berries.',
+    },
+    {
+      title: 'Millet Pancakes',
+      image: 'https://www.mecooks.com/wp-content/uploads/2023/01/IMGL6479-min-scaled.jpg',
+      description: 'Fluffy millet pancakes served with maple syrup and fresh berries.',
+    },
+    {
+      title: 'Millet Pancakes',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3L0WDUgreFSAEOmP5-Z1cGdrEv6AlzgxbBw&s',
+      description: 'Fluffy millet pancakes served with maple syrup and fresh berries.',
+    },
+
   ]);
 
   const [showModal, setShowModal] = useState(false);

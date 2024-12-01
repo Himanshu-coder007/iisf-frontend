@@ -8,6 +8,9 @@ import store from "./redux/store.js";
 import { Toaster } from "react-hot-toast"; // Import Toaster here
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 
 const persistor = persistStore(store);
 

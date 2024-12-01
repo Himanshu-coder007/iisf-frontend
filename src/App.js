@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute"; // Import the PrivateRoute component
-import Dashboard from "./components/Shared/Dashboard";
+import Dashboard from "./components/Shared/Dashboard/pages/Home";
 import Login from "./components/Shared/Login";
 import Signup from "./components/Shared/Signup";
 import Admin from "./components/Admin/Dashboard";
@@ -10,7 +10,7 @@ import AdminUsers from "./components/Admin/Users"; // Component for /admin/users
 import AdminRecipes from "./components/Admin/Recipes"; // Component for /admin/recipes
 import Agronomists from "./components/Agronomists/Dashboard";
 import Farmer from "./components/Farmer/Dashboard";
-import Government from "./components/Government/Dashboard";
+import Government from "./components/Government/components/Dashboard";
 import Nutritionist from "./components/Nutritionist/Dashboard";
 import User from "./components/User/Dashboard";
 import Forbidden from "./components/Forbidden"; // Page to show when access is denied
