@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute"; // Import the PrivateRoute component
-import Dashboard from "./components/Shared/Dashboard/pages/Home";
+import Dashboard from "./components/User/pages/Home.jsx";
 import Login from "./components/Shared/Login";
 import Signup from "./components/Shared/Signup";
 import Admin from "./components/Admin/Dashboard";
@@ -16,9 +16,15 @@ import Guidebook from "./components/Farmer/components/Guidebook.jsx";
 import Community from "./components/Farmer/components/Community.jsx";
 import Government from "./components/Government/components/Dashboard";
 import Nutritionist from "./components/Nutritionist/Dashboard";
-import User from "./components/User/Dashboard";
 import Forbidden from "./components/Forbidden"; // Page to show when access is denied
 import Farmerhome from './components/Farmer/components/Home.jsx';
+import AddRecipe from "./components/User/pages/AddRecipe.jsx";
+import DietPlan from "./components/User/pages/DietPlan.jsx";
+import MilletMarket from "./components/User/pages/MilletMarket.jsx";
+import RecipePage from "./components/User/pages/RecipePage.jsx";
+import ViewRecipe from "./components/User/pages/ViewRecipe.jsx";
+import User from "./components/User/pages/User.jsx"
+
 
 const App = () => {
   return (
@@ -83,9 +89,21 @@ const App = () => {
           }
         />
         <Route
-          path="/user"
+          path="/user/*"
           element={<PrivateRoute element={<User />} allowedRoles={["user"]} />}
-        />
+        >
+          {/* Nested User Routes */}
+          <Route path="diet-plan" element={<DietPlan />} />{" "}
+          {/* Remove leading '/' */}
+          <Route path="millet-market" element={<MilletMarket />} />{" "}
+          {/* Remove leading '/' */}
+          <Route path="recipes" element={<RecipePage />} />{" "}
+          {/* Remove leading '/' */}
+          <Route path="add-recipe" element={<AddRecipe />} />{" "}
+          {/* Remove leading '/' */}
+          <Route path="view-recipe/:id" element={<ViewRecipe />} />{" "}
+          {/* Remove leading '/' */}
+        </Route>
 
         {/* Public route */}
         <Route path="/" element={<Dashboard />} />
