@@ -9,15 +9,18 @@ import AdminHome from "./components/Admin/Home"; // Component for /admin/home
 import AdminUsers from "./components/Admin/Users"; // Component for /admin/users
 import AdminRecipes from "./components/Admin/Recipes"; // Component for /admin/recipes
 import Agronomists from "./components/Agronomists/Dashboard";
-import Farmer from "./components/Farmer/Dashboard";
+import Farmer from "./components/Farmer/pages/Dashboard.jsx";
+import TrainingSession from "./components/Farmer/components/TrainingSession.jsx";
+import Ecommerce from "./components/Farmer/components/Ecommerce.jsx";
+import Guidebook from "./components/Farmer/components/Guidebook.jsx";
+import Community from "./components/Farmer/components/Community.jsx";
 import Government from "./components/Government/components/Dashboard";
 import Nutritionist from "./components/Nutritionist/Dashboard";
 import User from "./components/User/Dashboard";
 import Forbidden from "./components/Forbidden"; // Page to show when access is denied
+import Farmerhome from './components/Farmer/components/Home.jsx';
 
 const App = () => {
-  
-
   return (
     <Router>
       <Routes>
@@ -36,6 +39,7 @@ const App = () => {
           <Route path="users" element={<AdminUsers />} />
           <Route path="recipes" element={<AdminRecipes />} />
         </Route>
+
         <Route
           path="/agronomist"
           element={
@@ -45,12 +49,21 @@ const App = () => {
             />
           }
         />
+
         <Route
-          path="/farmer"
+          path="/farmer/*"
           element={
             <PrivateRoute element={<Farmer />} allowedRoles={["farmer"]} />
           }
-        />
+        >
+          {/* Nested Farmer Routes */}
+          <Route path="home" element={<Farmerhome />} />
+          <Route path="training" element={<TrainingSession />} />
+          <Route path="ecommerce" element={<Ecommerce />} />
+          <Route path="guidebook" element={<Guidebook />} />
+          <Route path="community" element={<Community />} />
+        </Route>
+
         <Route
           path="/government"
           element={

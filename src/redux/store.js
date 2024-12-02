@@ -2,7 +2,6 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import authSlice from "./authSlice";
 
 import {
-  persistStore,
   persistReducer,
   FLUSH,
   REHYDRATE,

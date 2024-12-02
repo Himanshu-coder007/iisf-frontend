@@ -1,0 +1,97 @@
+/* Dashboard.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .dashboard {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .dashboard h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard p {
+    color: #7f8c8d;
+    line-height: 1.6;
+  }
+  
+  .millet-info h3 {
+    color: #27ae60;
+    margin-top: 20px;
+  }
+  
+  .millet-info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .millet-info ul li {
+    background-color: #ecf0f1;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .millet-info ul li strong {
+    color: #34495e;
+  }
+  
+  .millet-info p {
+    color: #34495e;
+  }
+  
+  .millet-info ul li:hover {
+    background-color: #d1e7dd;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Section-specific styling */
+  .millet-info .section-title {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 1.5em;
+    color: #2980b9;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .millet-info .market-prices ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .millet-info .market-prices ul li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fdfefe;
+    border: 1px solid #bdc3c7;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 768px) {
+    .dashboard {
+      padding: 15px;
+    }
+  
+    .millet-info ul li {
+      font-size: 0.9em;
+      padding: 8px 10px;
+    }
+  }

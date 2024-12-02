@@ -1,0 +1,31 @@
+.guidebook {
+    padding: 30px;
+  }
+  
+  .guidebook h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #007bff;
+  }
+  
+  .guidebook ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .guidebook ul li {
+    margin: 15px 0;
+  }
+  
+  .guidebook ul li a {
+    color: #007bff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .guidebook ul li a:hover {
+    color: #0056b3;
+  }
+  
